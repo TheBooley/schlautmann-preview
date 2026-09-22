@@ -3011,8 +3011,8 @@ h2 em {
 
 .zauber-welcome-grid {
   display: grid;
-  grid-template-columns: minmax(14rem, 0.74fr) minmax(0, 1.26fr);
-  gap: clamp(3rem, 9vw, 9rem);
+  grid-template-columns: minmax(14rem, 0.68fr) minmax(0, 1.32fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
   align-items: center;
 }
 
@@ -3057,7 +3057,7 @@ h2 em {
 }
 
 .zauber-welcome-copy {
-  max-width: 42rem;
+  max-width: none;
 }
 
 .zauber-welcome-copy h1 {
@@ -3069,12 +3069,12 @@ h2 em {
 }
 
 .zauber-welcome-copy .lead-copy {
-  max-width: 43ch;
+  max-width: none;
   margin-top: 1.6rem;
 }
 
 .zauber-welcome-copy > p:not(.section-label):not(.lead-copy) {
-  max-width: 48ch;
+  max-width: none;
   margin-top: 1rem;
   color: var(--muted);
   line-height: 1.6;
