@@ -3306,112 +3306,133 @@ h2 em {
 }
 
 .zauber-partners {
-  padding-block: clamp(4.5rem, 8vw, 7rem);
-  background: var(--color-book-green-pale);
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in oklch, var(--color-riviera) 8%, transparent), transparent 26rem),
+    var(--color-paper);
 }
 
-.zauber-partners-heading {
-  max-width: 58rem;
+.zauber-partners-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.74fr) minmax(0, 1.26fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  align-items: start;
+}
+
+.zauber-partners-logos {
+  display: grid;
+  gap: 1.25rem;
+  width: min(100%, 18rem);
+  margin-inline: auto;
+}
+
+.zauber-partners-logo-sheet {
+  display: flex;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.9rem, 1.7vw, 1.2rem);
+  background: var(--color-book-shell);
+  box-shadow: 0 1.2rem 2.4rem color-mix(in oklch, var(--fg) 9%, transparent);
+}
+
+.zauber-partners-logo-sheet:first-child {
+  transform: rotate(-0.7deg);
+}
+
+.zauber-partners-logo-sheet:last-child {
+  transform: rotate(0.55deg);
+}
+
+.zauber-partners-logo-sheet img {
+  display: block;
+  width: 100%;
+  max-height: 5rem;
+  object-fit: contain;
+}
+
+.zauber-partners-content {
+  max-width: 42rem;
 }
 
 .zauber-partners-heading h2 {
-  max-width: 16ch;
+  max-width: 14ch;
   margin: 0;
-  font-size: clamp(2.25rem, 4.4vw, 4.4rem);
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  font-size: clamp(2.75rem, 4.8vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.97;
 }
 
 .zauber-partners-heading .lead-copy {
-  max-width: 52ch;
-  margin-top: 1.4rem;
+  max-width: 43ch;
+  margin-top: 1.6rem;
 }
 
 .zauber-partners-note {
-  max-width: 52ch;
+  max-width: 48ch;
   margin: 1rem 0 0;
   color: var(--muted);
-  font-size: 1rem;
   line-height: 1.6;
 }
 
 .zauber-partner-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 3vw, 2.25rem);
-  margin-top: clamp(2.5rem, 5vw, 4.25rem);
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: var(--hairline);
 }
 
 .zauber-partner {
-  display: grid;
-  grid-template-columns: minmax(9rem, 0.75fr) minmax(0, 1.25fr);
-  align-items: center;
-  border-top: 1px solid color-mix(in oklch, var(--accent) 35%, var(--border));
-  border-bottom: 1px solid color-mix(in oklch, var(--accent) 18%, var(--border));
-  background: color-mix(in oklch, var(--color-paper) 72%, transparent);
+  display: block;
+  padding: 1.45rem 0 1.6rem;
+  border-bottom: var(--hairline);
   color: var(--fg);
   text-decoration: none;
-  transition: background 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .zauber-partner:hover,
 .zauber-partner:focus-visible {
-  color: var(--fg);
-  background: var(--color-paper);
-  transform: translateY(-0.2rem);
-}
-
-.zauber-partner-logo {
-  display: flex;
-  min-height: 9rem;
-  align-items: center;
-  justify-content: center;
-  padding: 1.1rem;
-  background: var(--color-paper);
-}
-
-.zauber-partner-logo img {
-  display: block;
-  width: 100%;
-  max-height: 6rem;
-  object-fit: contain;
+  color: var(--accent);
+  transform: translateX(0.25rem);
 }
 
 .zauber-partner-copy {
   display: flex;
-  min-height: 9rem;
+  min-height: 0;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding: 1.2rem 1.35rem;
+  padding: 0;
 }
 
 .zauber-partner-copy strong {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.05;
 }
 
-.zauber-partner-copy span {
+.zauber-partner-copy > span {
+  max-width: 48ch;
   margin-top: 0.55rem;
   color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .zauber-partner-copy em {
-  margin-top: 0.9rem;
+  margin-top: 0.85rem;
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.67rem;
+  font-size: 0.76rem;
   font-style: normal;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 @media (max-width: 900px) {
-  .zauber-welcome-grid {
+  .zauber-welcome-grid,
+  .zauber-partners-layout {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -3419,12 +3440,19 @@ h2 em {
     width: min(100%, 18rem);
   }
 
-  .zauber-welcome-copy {
+  .zauber-welcome-copy,
+  .zauber-partners-content {
     max-width: 44rem;
   }
 
-  .zauber-partner-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .zauber-partners-logos {
+    width: min(100%, 18rem);
+    margin-inline: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .zauber-partners-logo-sheet {
+    min-height: 7rem;
   }
 }
 
@@ -3526,32 +3554,41 @@ h2 em {
   }
 
   .zauber-partners {
-    padding-block: 4rem;
+    padding-block: 3.5rem 4rem;
+  }
+
+  .zauber-partners-layout {
+    gap: 2.5rem;
+  }
+
+  .zauber-partners-logos {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .zauber-partners-logo-sheet {
+    min-height: 6rem;
+    padding: 0.8rem;
+    box-shadow: 0 0.8rem 1.8rem color-mix(in oklch, var(--fg) 8%, transparent);
+  }
+
+  .zauber-partners-logo-sheet img {
+    max-height: 4rem;
   }
 
   .zauber-partners-heading h2 {
     max-width: 15ch;
-  }
-
-  .zauber-partner {
-    grid-template-columns: minmax(7rem, 0.72fr) minmax(0, 1.28fr);
-  }
-
-  .zauber-partner-logo,
-  .zauber-partner-copy {
-    min-height: 10rem;
-  }
-
-  .zauber-partner-copy {
-    padding: 1rem;
+    font-size: clamp(2.45rem, 11vw, 3.25rem);
+    line-height: 0.98;
   }
 
   .zauber-partner-copy strong {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
-  .zauber-partner-copy span {
-    font-size: 0.82rem;
+  .zauber-partner-copy > span {
+    font-size: 0.95rem;
   }
 }
 
