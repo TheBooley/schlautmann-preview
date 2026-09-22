@@ -3315,7 +3315,7 @@ h2 em {
 }
 
 .zauber-partners-heading h2 {
-  max-width: 26ch;
+  max-width: none;
   margin: 0;
   font-size: clamp(2.25rem, 3.6vw, 3.4rem);
   letter-spacing: -0.045em;
@@ -3323,12 +3323,12 @@ h2 em {
 }
 
 .zauber-partners-heading .lead-copy {
-  max-width: 76ch;
+  max-width: none;
   margin-top: 1.35rem;
 }
 
 .zauber-partners-note {
-  max-width: 76ch;
+  max-width: none;
   margin: 1rem 0 0;
   color: var(--muted);
   font-size: 1rem;
@@ -3337,8 +3337,8 @@ h2 em {
 
 .zauber-partner-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(0.8rem, 1.8vw, 1.25rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2.25rem);
   max-width: none;
   margin-top: clamp(2.5rem, 5vw, 4rem);
 }
