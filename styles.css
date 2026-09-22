@@ -3011,8 +3011,8 @@ h2 em {
 
 .zauber-welcome-grid {
   display: grid;
-  grid-template-columns: minmax(14rem, 0.68fr) minmax(0, 1.32fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
+  grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+  gap: clamp(2.25rem, 4vw, 4rem);
   align-items: center;
 }
 
